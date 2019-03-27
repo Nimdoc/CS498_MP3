@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: jenkins.util.AtmostOneTaskExecutorTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.962 sec - in jenkins.util.AtmostOneTaskExecutorTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.661 sec - in jenkins.util.AtmostOneTaskExecutorTest

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="jenkins.security.CryptoConfidentialKeyTest" time="0.513" tests="3" errors="0" skipped="0" failures="0">
+<testsuite name="jenkins.security.CryptoConfidentialKeyTest" time="0.655" tests="3" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64"/>
@@ -59,7 +59,7 @@
     <property name="sun.desktop" value="gnome"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase name="loadingExistingKey" classname="jenkins.security.CryptoConfidentialKeyTest" time="0.489"/>
-  <testcase name="multipleEncryptsAreIdempotent" classname="jenkins.security.CryptoConfidentialKeyTest" time="0.008"/>
-  <testcase name="decryptGetsPlainTextBack" classname="jenkins.security.CryptoConfidentialKeyTest" time="0.016"/>
+  <testcase name="loadingExistingKey" classname="jenkins.security.CryptoConfidentialKeyTest" time="0.622"/>
+  <testcase name="multipleEncryptsAreIdempotent" classname="jenkins.security.CryptoConfidentialKeyTest" time="0.009"/>
+  <testcase name="decryptGetsPlainTextBack" classname="jenkins.security.CryptoConfidentialKeyTest" time="0.024"/>
 </testsuite>
