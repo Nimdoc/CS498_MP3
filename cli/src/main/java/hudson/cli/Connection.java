@@ -145,7 +145,7 @@ public class Connection {
     public KeyAgreement diffieHellman(boolean side) throws IOException, GeneralSecurityException {
         return diffieHellman(side,512);
     }
-    public KeyAgreement diffieHellman(boolean side, int keySize) throws IOException, GeneralSecurityException {
+public KeyAgreement diffieHellman(boolean side, int keySize) throws IOException, GeneralSecurityException {
         KeyPair keyPair;
         PublicKey otherHalf;
 
@@ -153,23 +153,26 @@ public class Connection {
             AlgorithmParameterGenerator paramGen = AlgorithmParameterGenerator.getInstance("DH");
             paramGen.init(keySize);
 
-            KeyPairGenerator dh = KeyPairGenerator.getInstance("DH");
-            dh.initialize(paramGen.generateParameters().getParameterSpec(DHParameterSpec.class));
-            keyPair = dh.generateKeyPair();
+            DHParameterSpec param = paramGen.generateParameters().getParameterSpec(DHParameterSpec.class);
+            keyPair = generateKeyPairWithSpec(param);
 
             // send a half and get a half
             writeKey(keyPair.getPublic());
             otherHalf = KeyFactory.getInstance("DH").generatePublic(readKey());
-        } else {
+
+        }
+        else {
+            
             otherHalf = KeyFactory.getInstance("DH").generatePublic(readKey());
 
-            KeyPairGenerator keyPairGen = KeyPairGenerator.getInstance("DH");
-            keyPairGen.initialize(((DHPublicKey) otherHalf).getParams());
-            keyPair = keyPairGen.generateKeyPair();
+            DHParameterSpec param = ((DHPublicKey), otherHalf).getParams();
+            keyPair = generateKeyPairWithSpec(param);
 
             // send a half and get a half
             writeKey(keyPair.getPublic());
         }
+
+
 
         KeyAgreement ka = KeyAgreement.getInstance("DH");
         ka.init(keyPair.getPrivate());
@@ -177,6 +180,15 @@ public class Connection {
 
         return ka;
     }
+
+    private KeyPair generateKeyPairWithSpec(DHParameterSpec param){
+                    throw NoSuchAlgorithmException, InvalidAlgorithmParameter Exception;
+                KeyPair = keyPair;
+                KeyPairGenerator dh = KeyPairGenerator.getInstance("DH");
+                dh.initialize(param);
+                keyPair = dh.generateKeyPair();
+                return keyPair;
+            }
 
     /**
      * Upgrades a connection with transport encryption by the specified symmetric cipher.
