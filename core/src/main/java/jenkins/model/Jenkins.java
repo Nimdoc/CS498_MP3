@@ -3936,12 +3936,7 @@ public class Jenkins extends AbstractCIBase implements DirectlyModifiableTopLeve
         }
     }
 
-    void updateAndTrim() {
-		updateComputerList();
-		trimLabels();
-	}
-
-	public static class MasterComputer extends Computer {
+    public static class MasterComputer extends Computer {
         protected MasterComputer() {
             super(Jenkins.getInstance());
         }
