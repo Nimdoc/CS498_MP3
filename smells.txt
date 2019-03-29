@@ -5,4 +5,6 @@ Alex Hamlin
 
 2. This code is definitely a duplicate code smell. The code is repeatedly in several places.
 
-4. To eliminate these repeats and avoid the breaks we should put them in a loop but have it inside a break label.
+3. Now that we think of it, it actually looks like it would be better in the jenkins. The refactored method only calls methods that belong to a jenkins object. I would define this code smell as "Feature Envy". 
+
+4. This repeated code can be replaced with a loop but it should be put into a break label so that the whole program doesn't break when it is called. 
