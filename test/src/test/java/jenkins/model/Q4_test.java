@@ -6,7 +6,8 @@ import org.junit.Test;
 public class mp3_q4Test {
 
 
-	@Test 	public void testidFromFilename()
+	@Test 	
+	public void testidFromFilename()
 	   {
 		String Testin = "abdc5";
 		IdStrategy.CaseSensitive TestObj = new IdStrategy.CaseSensitive();
