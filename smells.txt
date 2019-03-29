@@ -4,3 +4,5 @@ Alex Hamlin
 1. This code smells is duplicate code. The code that was refactored was repeated in 2 different places. It also could be a "too long method" smell because the code replaced shortens the method significantly.
 
 2. This code is definitely a duplicate code smell. The code is repeatedly in several places.
+
+4. To eliminate these repeats and avoid the breaks we should put them in a loop but have it inside a break label.
