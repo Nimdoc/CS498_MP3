@@ -1,0 +1,10 @@
+Tom Busby
+Alex Hamlin
+
+1. This code smells is duplicate code. The code that was refactored was repeated in 2 different places. It also could be a "too long method" smell because the code replaced shortens the method significantly.
+
+2. This code is definitely a duplicate code smell. The code is repeatedly in several places.
+
+3. Now that we think of it, it actually looks like it would be better in the jenkins. The refactored method only calls methods that belong to a jenkins object. I would define this code smell as "Feature Envy". 
+
+4. This repeated code can be replaced with a loop but it should be put into a break label so that the whole program doesn't break when it is called. 
