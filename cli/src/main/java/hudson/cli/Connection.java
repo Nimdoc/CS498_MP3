@@ -189,6 +189,7 @@ public class Connection {
 		dh.initialize(parameterSpec);
 		keyPair = dh.generateKeyPair();
 		return keyPair;
+		
 	}
 
     /**
