@@ -231,6 +231,7 @@ public abstract class IdStrategy extends AbstractDescribableImpl<IdStrategy> imp
             } else {
                 StringBuilder buf = new StringBuilder(filename.length());
                 final char[] chars = filename.toCharArray();
+                outerloop:
                 for (int i = 0; i < chars.length; i++) {
                     char c = chars[i];
                     if ('a' <= c && c <= 'z') {
@@ -247,7 +248,7 @@ public abstract class IdStrategy extends AbstractDescribableImpl<IdStrategy> imp
                     } else if (c == '$') {
                         StringBuilder hex = new StringBuilder(4);
                         
-                        Boolean should_break = false;
+                        boolean should_break = false;
                         
                         for(int j = 0; j < 4; j++)
                         {
@@ -256,11 +257,9 @@ public abstract class IdStrategy extends AbstractDescribableImpl<IdStrategy> imp
                                 hex.append(chars[i]);
                             } else {
                             	should_break = true;
-                                break;
+                                break outerloop;
                             }
                         }
-                        if(should_break)
-                        	break;
 
                         buf.append(Character.valueOf((char)Integer.parseInt(hex.toString(), 16)));
                     }

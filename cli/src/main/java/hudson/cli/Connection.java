@@ -44,14 +44,17 @@ import java.io.OutputStream;
 import java.net.Socket;
 import java.security.AlgorithmParameterGenerator;
 import java.security.GeneralSecurityException;
+import java.security.InvalidAlgorithmParameterException;
 import java.security.Key;
 import java.security.KeyFactory;
 import java.security.KeyPair;
 import java.security.KeyPairGenerator;
+import java.security.NoSuchAlgorithmException;
 import java.security.PublicKey;
 import java.security.Signature;
 import java.security.interfaces.DSAPublicKey;
 import java.security.interfaces.RSAPublicKey;
+import java.security.spec.InvalidParameterSpecException;
 import java.security.spec.X509EncodedKeySpec;
 
 public class Connection {
@@ -153,9 +156,7 @@ public class Connection {
             AlgorithmParameterGenerator paramGen = AlgorithmParameterGenerator.getInstance("DH");
             paramGen.init(keySize);
 
-            KeyPairGenerator dh = KeyPairGenerator.getInstance("DH");
-            dh.initialize(paramGen.generateParameters().getParameterSpec(DHParameterSpec.class));
-            keyPair = dh.generateKeyPair();
+            keyPair = generateKeyPairWithSpec(paramGen);
 
             // send a half and get a half
             writeKey(keyPair.getPublic());
@@ -177,6 +178,18 @@ public class Connection {
 
         return ka;
     }
+
+	private KeyPair generateKeyPairWithSpec(AlgorithmParameterGenerator paramGen)
+			throws NoSuchAlgorithmException, InvalidParameterSpecException,
+			InvalidAlgorithmParameterException {
+		KeyPair keyPair;
+		KeyPairGenerator dh = KeyPairGenerator.getInstance("DH");
+		Class<DHParameterSpec> class1 = DHParameterSpec.class;
+		DHParameterSpec parameterSpec = paramGen.generateParameters().getParameterSpec(class1);
+		dh.initialize(parameterSpec);
+		keyPair = dh.generateKeyPair();
+		return keyPair;
+	}
 
     /**
      * Upgrades a connection with transport encryption by the specified symmetric cipher.

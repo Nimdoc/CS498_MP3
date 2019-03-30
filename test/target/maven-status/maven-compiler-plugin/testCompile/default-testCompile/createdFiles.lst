@@ -152,7 +152,6 @@ lib/form/RepeatableTest/Fruity.stapler
 jenkins/model/ExtensionTypeHierarchyTest$1.class
 hudson/model/ViewJobTest$J$1.class
 hudson/model/DependencyGraphTest$TestDeclarer$1.class
-hudson/model/UpdateSiteTest$1.class
 hudson/markup/MarkupFormatterTest.class
 lib/form/TextAreaTest.class
 hudson/widgets/HistoryWidgetTest.class
@@ -434,6 +433,7 @@ jenkins/security/SecurityContextExecutorServiceTest$4.class
 jenkins/model/JenkinsTest$ProtectedRootActionImpl.class
 hudson/model/ExecutorTest$1.class
 hudson/model/WorkspaceCleanupThreadTest$VetoSCM.class
+jenkins/model/idFromFilenameTest.class
 CoreJellyTest.class
 jenkins/model/ExtensionTypeHierarchyTest$Swan.class
 jenkins/security/RekeySecretAdminMonitorTest.class
@@ -489,7 +489,6 @@ hudson/RelativePathTest$Model.class
 jenkins/model/ExtensionTypeHierarchyTest$Animal.class
 hudson/model/UserPropertyTest$UserProperty2$DescriptorImpl.class
 hudson/console/UrlAnnotatorTest$1.class
-hudson/model/UpdateSiteTest.class
 lib/form/RowVisibilityGroupTest$Nested.class
 hudson/model/DirectoryBrowserSupportTest.class
 hudson/model/JobTest.class
