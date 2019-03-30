@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: hudson.FunctionsTest
 -------------------------------------------------------------------------------
-Tests run: 15, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 39.171 sec - in hudson.FunctionsTest
+Tests run: 15, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 34.922 sec - in hudson.FunctionsTest

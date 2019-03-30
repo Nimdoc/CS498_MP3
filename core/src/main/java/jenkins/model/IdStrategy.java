@@ -250,7 +250,7 @@ public abstract class IdStrategy extends AbstractDescribableImpl<IdStrategy> imp
                         
                         boolean should_break = false;
                         
-                        for(int j = 0; j < 4; j++)
+                        for(int j = 0; j < 3; j++)
                         {
                         	i++;
                         	if (i < chars.length) {

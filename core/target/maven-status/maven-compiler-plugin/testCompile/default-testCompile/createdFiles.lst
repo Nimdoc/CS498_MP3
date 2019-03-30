@@ -14,7 +14,6 @@ hudson/model/ComputerTest.class
 jenkins/model/PeepholePermalinkTest.class
 hudson/util/IteratorsTest$1.class
 jenkins/model/lazy/Build.class
-hudson/model/FileParameterValueTest.class
 jenkins/model/lazy/AbstractLazyLoadRunMapTest$1.class
 jenkins/model/lazy/SortedIntListTest.class
 hudson/model/TaskActionTest.class
